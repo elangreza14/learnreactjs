@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewPlace = () => {
     return (
-        <h3>New Places</h3>
+        <h3>New Places baru</h3>
     )
 }
 
