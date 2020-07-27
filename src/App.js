@@ -2,14 +2,14 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import NewPlace from "./places/pages/NewPlace";
-import NewUser from "./user/pages/NewUser";
+import Users from "./user/pages/Users";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact>
-          <NewUser />
+        <Route path="/user" exact>
+          <Users />
         </Route>
         <Route path="/places" exact>
           <NewPlace />
