@@ -2,6 +2,7 @@ import React from "react";
 import "./UserItem.css";
 import Avatar from "../../shared/components/UIElements/Avatar";
 
+
 const UserItem = (props) => {
   let { name, image, places } = props.item;
   return (
