@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Card from "../../shared/components/UIElements/Card";
-import Button from "../../shared/components/FormElements/Button/Button";
+import Button from "../../shared/components/FormElements/Button";
 import "./PlaceItem.css";
 import Modal from "../../shared/components/UIElements/Modal";
+import Map from "../../shared/components/UIElements/Map";
 const PlaceItem = (props) => {
-  let { image, title, address, description, id } = props.item;
+  let { image, title, address, description, id, location } = props.item;
   const [show, setShow] = useState(false);
   const openHandler = () => setShow(true);
   const closeHandler = () => setShow(false);
@@ -20,7 +21,7 @@ const PlaceItem = (props) => {
         footer={<Button onClick={closeHandler}>CLOSE</Button>}
       >
         <div className="map-container">
-          <h2>THE MAP!!!!!</h2>
+          <Map center={location} zoom={20} />
         </div>
       </Modal>
       <li className="place-item">
@@ -28,7 +29,7 @@ const PlaceItem = (props) => {
           <div className="place-item__image">
             <img src={image} alt={title}></img>
           </div>
-          <div className="place-item__info">
+          <div className={`place-item__info  ${props.className}`}>
             <h2>{title}</h2>
             <h3>{address}</h3>
             <p>{description}</p>
