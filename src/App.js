@@ -5,25 +5,40 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
-
 import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import UserPlaces from "./places/pages/UserPlaces";
+import UpdatePlace from "./places/pages/UpdatePlace";
+import Home from "./shared/pages/Home";
+import Auth from "./user/pages/Auth";
+
 const App = () => {
+
+
+  
   return (
     <Router>
       <MainNavigation />
       <main>
         <Switch>
           <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/users" exact>
             <Users />
           </Route>
           <Route path="/places/new" exact>
             <NewPlace />
           </Route>
-          <Route path="/:userId/places" exact>
+          <Route path="/places/:placeId" exact>
+            <UpdatePlace />
+          </Route>
+          <Route path="/:userId/places">
             <UserPlaces />
+          </Route>
+          <Route path="/login" exact>
+            <Auth />
           </Route>
           <Redirect to="/" />
         </Switch>
